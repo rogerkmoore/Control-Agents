@@ -1,4 +1,4 @@
-#N canvas 147 40 1094 429 12;
+#N canvas 387 160 1094 429 12;
 #N canvas 111 25 1079 654 agent 0;
 #X obj 628 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -25,7 +25,7 @@
 #X obj 569 109 int;
 #X obj 554 82 * 0.66;
 #X obj 203 33 vsl 15 128 0 100 0 0 empty empty intention -15 -9 0 10
--4032 -1 -1 6350 1;
+-4032 -1 -1 2921 1;
 #X obj 261 33 vsl 15 128 200 10 0 0 empty empty effort -10 -9 0 10
 -261234 -1 -1 6684 1;
 #X obj 317 33 vsl 15 128 200 10 0 0 empty empty attention -20 -9 0
@@ -33,7 +33,7 @@
 #X obj 168 44 bng 15 250 50 0 empty empty rl 17 7 0 10 -4032 -1 -1
 ;
 #X obj 461 25 vsl 15 128 100 1 1 0 empty empty empty -20 -9 0 10 -204786
--1 -1 12700 1;
+-1 -1 3586 1;
 #X obj 100 33 bng 15 250 50 0 empty empty Start 17 7 0 10 -4034 -1
 -1;
 #X obj 100 63 bng 15 250 50 0 empty empty Continue 17 7 0 10 -262144
@@ -41,9 +41,9 @@
 #X obj 100 93 bng 15 250 50 0 empty empty Stop 17 7 0 10 -258113 -1
 -1;
 #X obj 218 33 vsl 15 128 100 0 0 0 empty empty empty -20 -9 0 10 -257985
--1 -1 6350 1;
+-1 -1 9779 1;
 #X obj 206 525 vsl 15 128 -1 1 0 1 empty empty PLEASURE -15 -9 0 10
--262144 -1 -1 12700 1;
+-262144 -1 -1 9241 1;
 #X obj 267 525 vsl 15 128 -1 1 0 0 empty empty AROUSAL -15 -9 0 10
 -262144 -1 -1 6350 1;
 #X obj 327 525 vsl 15 128 -1 1 0 0 empty empty DOMINANCE -15 -9 0 10
@@ -231,7 +231,7 @@
 #X obj 26 86 *~ 900;
 #X msg 64 -10 0.7854;
 #X obj 127 -92 hsl 128 15 100 1500 0 0 empty empty frequency_range
--2 -8 0 10 -262144 -1 -1 12700 1;
+-2 -8 0 10 -262144 -1 -1 9241 1;
 #X floatatom 124 -66 5 0 0 0 - - -;
 #X obj 311 47 delay 10;
 #X obj 403 -74 hsl 128 15 30 140 0 0 empty empty syllable_duration
@@ -479,11 +479,10 @@
 #X msg 17 296 0;
 #X obj 8 255 loadbang;
 #X obj 625 365 pid-controller 1 0 0;
-#X obj 374 33 vsl 15 128 10000 10 1 0 empty empty compliance -20 -9
-0 10 -232576 -1 -1 0 1;
+#X obj 374 33 vsl 15 128 1000 10 1 0 empty empty compliance -20 -9
+0 10 -232576 -1 -1 12700 1;
 #X floatatom 993 206 5 0 0 0 - - -;
 #X obj 993 175 int;
-#X obj 919 232 metro 10000;
 #X obj 918 208 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 861 233 10000;
@@ -502,17 +501,18 @@
 #X text 421 25 HAPPY;
 #X text 436 138 SAD;
 #X obj 919 281 spigot;
-#X obj 958 257 < 10000;
+#X obj 919 232 metro 1000;
+#X obj 958 257 < 1000;
 #X connect 0 0 3 0;
 #X connect 0 0 5 0;
 #X connect 0 0 6 0;
+#X connect 0 0 77 0;
 #X connect 0 0 78 0;
-#X connect 0 0 79 0;
 #X connect 1 0 3 0;
 #X connect 1 0 6 0;
-#X connect 1 0 77 0;
+#X connect 1 0 93 0;
 #X connect 2 0 73 0;
-#X connect 2 0 81 0;
+#X connect 2 0 80 0;
 #X connect 3 0 2 0;
 #X connect 3 0 61 0;
 #X connect 3 0 62 0;
@@ -524,14 +524,14 @@
 #X connect 8 0 10 1;
 #X connect 9 0 73 1;
 #X connect 10 0 9 0;
-#X connect 11 0 90 0;
+#X connect 11 0 89 0;
 #X connect 12 0 11 0;
 #X connect 14 0 2 0;
 #X connect 15 0 4 0;
 #X connect 16 0 7 0;
 #X connect 17 0 3 0;
 #X connect 17 0 6 0;
-#X connect 17 0 78 0;
+#X connect 17 0 77 0;
 #X connect 18 0 21 0;
 #X connect 19 0 2 0;
 #X connect 19 0 22 0;
@@ -595,26 +595,26 @@
 #X connect 72 0 71 0;
 #X connect 73 0 60 0;
 #X connect 74 0 76 0;
-#X connect 75 0 77 1;
+#X connect 75 0 93 1;
 #X connect 75 0 94 0;
 #X connect 76 0 75 0;
 #X connect 77 0 93 0;
-#X connect 78 0 77 0;
-#X connect 79 0 74 0;
-#X connect 80 0 84 0;
-#X connect 81 0 85 1;
-#X connect 81 0 88 1;
-#X connect 82 0 84 1;
-#X connect 83 0 85 0;
-#X connect 84 0 83 0;
+#X connect 78 0 74 0;
+#X connect 79 0 83 0;
+#X connect 80 0 84 1;
+#X connect 80 0 87 1;
+#X connect 81 0 83 1;
+#X connect 82 0 84 0;
+#X connect 83 0 82 0;
+#X connect 84 0 86 0;
 #X connect 85 0 87 0;
-#X connect 86 0 88 0;
-#X connect 87 0 86 0;
-#X connect 88 0 89 0;
-#X connect 89 0 22 0;
-#X connect 90 0 26 0;
-#X connect 93 0 80 0;
-#X connect 94 0 93 1;
+#X connect 86 0 85 0;
+#X connect 87 0 88 0;
+#X connect 88 0 22 0;
+#X connect 89 0 26 0;
+#X connect 92 0 79 0;
+#X connect 93 0 92 0;
+#X connect 94 0 92 1;
 #X coords 0 -1 1 1 480 160 2 10 10;
 #X restore 575 16 pd agent;
 #N canvas 961 181 363 488 ramp 0;
@@ -705,7 +705,7 @@
 #X floatatom 293 118 5 0 0 0 - - -;
 #X text 187 6 ENV NOISE;
 #X obj 59 56 vsl 15 128 200 10 0 0 empty empty Rate -5 -9 0 10 -262144
--1 -1 12700 1;
+-1 -1 6684 1;
 #X obj 190 116 random 1001;
 #X obj 190 153 moses 500;
 #X obj 259 182 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -825,9 +825,9 @@
 #X text 83 35 lr;
 #X obj 25 245 output~;
 #X obj 35 98 vsl 15 128 0 100 0 0 empty empty lstuff -10 -9 0 10 -4032
--1 -1 6350 1;
+-1 -1 11049 1;
 #X obj 85 98 vsl 15 128 0 100 0 0 empty empty rstuff -10 -9 0 10 -257985
--1 -1 6350 1;
+-1 -1 1651 1;
 #X obj 414 88 loadbang;
 #X connect 0 0 52 0;
 #X connect 0 0 32 0;
