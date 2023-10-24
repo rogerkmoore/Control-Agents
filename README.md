@@ -5,3 +5,7 @@ A simulation (in Pure Data) of control agents operating in an environment consis
 Multiple agents (created using copy-&-past) can operate in the same environment.  Their settings can be configured to facilitate competition (different intentions) or collaboration (same intentions).  
 
 Audio vocalisations can be enabled which reflect the various internal parameters.
+
+Note that [average.pd] is part of the [maxib] library of externals.  So when Pd is running, go to Help > Find externals.  Enter 'average' into the search window and click on 'Search'.  This should bring up the [maxlib] library; click on it to install.  You'll then need to ensure that this library can be found by Pd by adding it to Pd > Settings > Path.
+
+You can find the slides from a talk featuring [Control Agents] [here](https://github.com/rogerkmoore/Talks/blob/main/2023%20-%20IAPCT/Moore%20-%20Compliance%20in%20perceptual%20control%20systems%20Insights%20and%20implications.pdf)
